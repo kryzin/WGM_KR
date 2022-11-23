@@ -129,13 +129,12 @@ def odbij_w_pionie1(im):
 #------------------------------------------------------
 # zadanie 3
 def rysuj_kolo(obraz,m_s,n_s,r):
-    # wybrane miejsce np. koło o środku w 400,200
     obraz1 = obraz.copy()
     tab = obraz.load()
     tab1 = obraz1.load()
     w, h = obraz.size
     for i, j in zakres(w, h):# zostaje ucinany obraz
         if (i - m_s) ** 2 + (j - n_s) ** 2 < r ** 2:
-            tab1[i,j] = tab[i,j]
+            tab1[i,j] = tab[i + 200, j + 100]
     return obraz1
 rysuj_kolo(obraz, 200,200,100).show()
