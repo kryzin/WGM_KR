@@ -135,6 +135,6 @@ def rysuj_kolo(obraz,m_s,n_s,r):
     w, h = obraz.size
     for i, j in zakres(w, h):# zostaje ucinany obraz
         if (i - m_s) ** 2 + (j - n_s) ** 2 < r ** 2:
-            tab1[i,j] = tab[i + 200, j + 100]
+            tab1[i,j] = tab[i + 200, j + 50] # jak zawsze dostawać z miejsca a nie względem kopii
     return obraz1
 rysuj_kolo(obraz, 200,200,100).show()
