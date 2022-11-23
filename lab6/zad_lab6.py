@@ -60,8 +60,8 @@ def rysuj_kwadrat_grub(obraz, m, n, a, kolor, grubosc):
                 obraz1.putpixel((i,j), kolor)
     return obraz1
 
-obraz3 = rysuj_kwadrat_grub(obraz, 320,200,100,(0,255,0),20)
-obraz3.show()
+# obraz3 = rysuj_kwadrat_grub(obraz, 320,200,100,(0,255,0),20)
+# obraz3.show()
 
 #---------------------------------------------------
 # zadanie 2.1
@@ -127,3 +127,15 @@ def odbij_w_pionie1(im):
 # po zmianie dostajemy lustrzane odbicie, dzieje się tak bo odwracając chcemy pobierać piksele
 # z już zmienionej połowy tablicy, więc robimy kopię
 #------------------------------------------------------
+# zadanie 3
+def rysuj_kolo(obraz,m_s,n_s,r):
+    # wybrane miejsce np. koło o środku w 400,200
+    obraz1 = obraz.copy()
+    tab = obraz.load()
+    tab1 = obraz1.load()
+    w, h = obraz.size
+    for i, j in zakres(w, h):# zostaje ucinany obraz
+        if (i - m_s) ** 2 + (j - n_s) ** 2 < r ** 2:
+            tab1[i,j] = tab[i,j]
+    return obraz1
+rysuj_kolo(obraz, 200,200,100).show()
