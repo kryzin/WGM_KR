@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 # zadanie 1
 # zmieniłam rozmiar obrazu na mniejszy, żeby lepiej było widać zadanie 2
-obraz = Image.open('c:/Users/Karolina/PycharmProjects/WGM_KR/lab4/obraz.jpg')
-inicjaly = Image.open('c:/Users/Karolina/PycharmProjects/WGM_KR/lab3/inicjaly.jpg')
+obraz = Image.open('/lab4/obraz.jpg')
+inicjaly = Image.open('/lab3/inicjaly.jpg')
 
 def zakres(w, h):
     return [(i, j) for i in range(w) for j in range(h)]
