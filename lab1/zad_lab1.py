@@ -59,3 +59,4 @@ print("tryb:", obraz_int.mode)
 print("format:", obraz_int.format)
 print("rozmiar:", obraz_int.size)
 obraz_int.show()
+

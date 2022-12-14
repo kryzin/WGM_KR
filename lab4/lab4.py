@@ -3,8 +3,6 @@ import numpy as np
 from PIL import ImageChops
 import matplotlib.pyplot as plt
 
-
-
 im = Image.open('lab4/jesien.jpg')
 print("tryb", im.mode)
 print("format", im.format)
@@ -26,7 +24,6 @@ print("tryb", im_g.mode)
 t_b = T[:, :, 2]
 im_b = Image.fromarray(t_b) # obraz w odcieniuach szarości kanału b
 print("tryb", im_b.mode)
-
 
 # przedstawienie 4 obrazów w jednym oknie plt
 plt.figure(figsize=(32, 16))

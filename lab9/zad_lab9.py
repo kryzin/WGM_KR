@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 # zadanie 1a
 obraz1 = Image.open('obraz1.png')
+print("tryb obraz1: ",obraz1.mode)
 obraz2 = obraz1.copy().convert('RGB')
 
 # zadanie 1b
@@ -12,10 +13,23 @@ r,g,b,a = obraz1.split()
 # a.show()
 obraz3 = Image.new('RGB', obraz1.size, (255,255,255))
 obraz3.paste(obraz1, (0, 0), a)
+obraz3.save('obraz3.png')
 
 # zadanie 1c
-roznica = ImageChops.difference(obraz2,obraz3)
-# roznica.show()
+plt.figure(figsize=(10,6))
+plt.subplot(1,3,1)
+plt.imshow(obraz2)
+plt.title("metoda .convert")
+plt.axis('off')
+plt.subplot(1,3,2)
+plt.imshow(obraz3)
+plt.title("metoda .paste")
+plt.axis('off')
+plt.subplot(1,3,3)
+plt.imshow(ImageChops.difference(obraz2,obraz3))
+plt.title("różnice między metodami")
+plt.axis('off')
+plt.show()
 #-------------------------------------------------------
 # zadanie 2a
 tryby = ['CMYK','YCbCr','HSV']
@@ -93,14 +107,14 @@ plt.savefig('hsv.png')
 #-----------------------------------------------
 # zadanie 3a
 obraz4 = Image.open('obraz4.jpg')
-print("tryb",obraz4.mode)
+print("tryb obraz4: ",obraz4.mode)
 obraz4 = obraz4.resize(obraz1.size, 1)
 obraz4a = obraz4.copy()
 obraz4a.paste(obraz1, (0,0), a)
-# obraz4a.show()
+obraz4a.show()
 obraz1a = obraz1.copy()
 obraz1a.paste(obraz4, (0,0), a)
-# obraz1a.show()
+obraz1a.show()
 plt.figure(figsize=(5,3))
 plt.subplot(1,2,1)
 plt.imshow(obraz4a)
